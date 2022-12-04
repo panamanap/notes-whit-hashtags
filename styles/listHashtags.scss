@@ -1,0 +1,38 @@
+@import '_variables';
+
+.listHashtags {
+    margin-top: 10px;
+    box-shadow: $main-border;
+    width: 500px;
+    min-height: 50px;
+    max-height: 450px;
+    padding: 10px 15px;
+    border-radius: $main-radius;
+    overflow-x: scroll;
+    display: flex;
+
+    .hashtag {
+        cursor: pointer;
+        user-select: none;
+        box-shadow: $main-border;
+        padding: 5px;
+    }
+    
+    .hashtag + .hashtag {
+        margin-left: 10px;
+    }
+
+    .empty {
+        color: #bbb;
+    }
+}
+
+::-webkit-scrollbar {
+    height: 10px;
+}
+
+@media screen and (max-width: 600px)  {
+    .listHashtags {
+        width: 300px;
+    }
+}

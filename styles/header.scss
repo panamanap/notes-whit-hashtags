@@ -1,0 +1,28 @@
+@import "_variables";
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    box-shadow: $main-border;
+    padding: 10px;
+    border-radius: $main-radius;
+
+    .logo {
+        display: flex;
+        align-items: center;
+        width: 35px;
+
+        .vite, .react, .typescript {
+            width: 30px;
+            margin-right: 10px;
+            user-select: none;
+            transition: 0.5s all;
+        }
+
+        .vite:hover, .react:hover, .typescript:hover{
+            transform: scale(1.2);
+            transition: 0.5s all
+        }
+    }
+}

@@ -1,0 +1,10 @@
+@import "_variables";
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    box-shadow: $main-border;
+    padding: 10px;
+    border-radius: $main-radius;
+}

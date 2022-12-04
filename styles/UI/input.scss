@@ -1,0 +1,55 @@
+@import "../_variables";
+
+.inputWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+
+    form {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .input {
+        border: none;
+        box-shadow: $main-border;
+        transition: 0.5s all;
+        width: 300px;
+        border-radius: $main-radius;
+    }
+
+    .addNote {
+        padding: 10px 45px 10px 10px;
+    }
+
+    .edit {
+        padding: 10px;
+    }
+
+    .input:focus {
+        outline: 1px solid $main-color;
+
+    }
+}
+
+.enter:focus-within {
+    transform: scale(1.5);
+    transition: all 0.5s;
+}
+
+@media screen and (max-width: 600px)  {
+
+    .inputWrapper {
+
+        .edit {
+            width: 130px;
+        }
+    }
+
+    .enter:focus-within {
+        transform: scale(1.1);
+        transition: all 0.5s;
+    }
+}

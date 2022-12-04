@@ -1,0 +1,67 @@
+@import '../variables';
+
+.container {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        order: 2;
+    }
+
+    p {
+        order: 3;
+    }
+
+    .checkmark {
+        position: relative;
+        box-shadow: 0 0 3px #000;
+        height: 20px;
+        min-width: 20px;
+        background-color: #eee;
+        border-radius: 5px;
+        order: 1;
+        margin-right: 15px;
+        user-select: none;
+    }
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    .checkmark:after {
+        left: 6px;
+        top: 3px;
+        width: 5px;
+        height: 8px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
+    }
+
+    &:hover input ~ .checkmark {
+        background-color: #d2d2d2;
+    }
+
+    input:checked ~ .checkmark {
+        background-color: $main-color;
+    }
+
+    input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    .checked {
+        text-decoration: line-through;
+        user-select: none;
+        color: #ccc;
+    }
+}

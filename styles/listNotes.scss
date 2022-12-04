@@ -1,0 +1,61 @@
+@import "_variables";
+
+.listNotes {
+    margin-top: 17px;
+    box-shadow: $main-border;
+    width: 500px;
+    min-height: 430px;
+    max-height: 430px;
+    padding: 20px 30px;
+    border-radius: $main-radius;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+
+    .listHeader {
+        box-shadow: $main-border;
+        padding: 5px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        user-select: none;
+
+        h3 {
+            font-size: 30px;
+            font-weight: 550;
+        }
+
+        h4 {
+            font-size: 15px;
+            font-weight: 400;
+        }
+    }
+
+    .empty {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            color: #bbb;
+        }
+    }
+}
+
+@media screen and (max-width: 600px)  {
+    .listNotes {
+        width: 300px;
+        min-height: 380px;
+        max-height: 380px;
+
+        .listHeader {
+
+            h3 {
+                font-size: 20px;
+                font-weight: 550;
+            }
+        }
+    }
+}
