@@ -44,17 +44,23 @@
     }
 }
 
-@media screen and (max-width: 600px)  {
+@media screen and (max-width: 600px) {
     .listNotes {
         width: 300px;
         min-height: 380px;
         max-height: 380px;
 
         .listHeader {
+            display: flex;
+            flex-direction: column;
 
             h3 {
                 font-size: 20px;
                 font-weight: 550;
+            }
+
+            h3, h4 {
+                margin-bottom: 5px;
             }
         }
     }

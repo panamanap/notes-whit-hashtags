@@ -3,6 +3,7 @@ import {Input} from "./UI/Input";
 import React from "react";
 import {Button} from "./UI/Button";
 import TextWithHashtag from "../TextWithHashtag";
+import {Note} from "../types";
 
 interface ListItemProps {
     title: string;
@@ -11,6 +12,8 @@ interface ListItemProps {
     onClickDelete: (id: number) => void;
     hashtagList: string[];
     setHashtagList: (value: string[]) => void;
+    list: Note[];
+    setList: (value: Note[]) => void;
 }
 
 export const ListItem = (
@@ -20,7 +23,9 @@ export const ListItem = (
         completed,
         onClickDelete,
         hashtagList,
-        setHashtagList
+        setHashtagList,
+        list,
+        setList
     }: ListItemProps) => {
     const [text, setText] = React.useState<string>(title);
     const [edit, setEdit] = React.useState<boolean>(false);
@@ -54,7 +59,15 @@ export const ListItem = (
             })
         })
 
-        setHashtagList([...hashtagList, ...hashtagsArr])
+        setHashtagList([...hashtagList, ...hashtagsArr]);
+
+        const newList = list.map(note => {
+            if(note.title !== titleText) return note;
+
+           return {...note, title: text}
+        })
+
+        setList(newList);
     }
 
     const changeInput = (text: string) => {

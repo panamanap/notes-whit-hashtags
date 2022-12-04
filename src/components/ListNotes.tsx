@@ -54,6 +54,8 @@ export const ListNotes = (
                             onClickDelete={() => onClickDelete(id)}
                             hashtagList={hashtagList}
                             setHashtagList={setHashtagList}
+                            list={list}
+                            setList={setList}
                         />
                     )}
                 </ul>
